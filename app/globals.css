@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-parchment: #F3EEE4;
+  --color-ink: #221F1C;
+  --color-brass: #A9782F;
+  --color-bottle: #2B3A2F;
+  --color-card: #FBF9F5;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+} 
