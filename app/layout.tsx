@@ -17,11 +17,11 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('http://localhost:3000'),
-  title: "SMK Market - Chaussures",
-  description: "Catalogue de chaussures a Bamako. Commandez directement via WhatsApp.",
+  title: "SMK - Boutique officielle",
+  description: "Découvrez l'univers de la marque SMK à Bamako. Commandez directement via WhatsApp.",
   openGraph: {
-    title: "SMK Market - Chaussures",
-    description: "Catalogue de chaussures a Bamako. Commandez directement via WhatsApp.",
+    title: "SMK - Boutique officielle",
+    description: "Découvrez l'univers de la marque SMK à Bamako. Commandez directement via WhatsApp.",
     locale: 'fr_ML',
     type: 'website',
   },

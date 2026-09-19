@@ -38,7 +38,7 @@ export default function AdminLoginPage() {
         <h1 className="font-[family-name:var(--font-fraunces)] text-2xl text-[var(--color-ink)]">
           Administration
         </h1>
-        <p className="mt-1 text-sm text-[var(--color-ink)]/60">SMK Market</p>
+        <p className="mt-1 text-sm text-[var(--color-ink)]/60">Maison SMK</p>
 
         <div className="mt-6 space-y-4">
           <div>

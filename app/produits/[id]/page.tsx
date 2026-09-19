@@ -16,7 +16,7 @@ export async function generateMetadata({
   if (!product) return {}
 
   return {
-    title: `${product.name} - SMK Market`,
+    title: `${product.name} - Maison SMK`,
     description: product.description ?? undefined,
     openGraph: {
       title: product.name,
