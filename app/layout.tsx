@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Work_Sans } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -34,9 +33,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${fraunces.variable} ${workSans.variable} font-[family-name:var(--font-work-sans)]`}>
-        <Header />
-        {children}
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

@@ -1,12 +1,13 @@
 export const revalidate = 300
 import Link from 'next/link'
-import { getProducts, getFeaturedProducts } from '@/lib/products'
+import { getProducts, getFeaturedProducts, getBestSellers } from '@/lib/products'
 import ProductCard from '@/components/ProductCard'
 import Image from 'next/image'
 
+
 export default async function Home() {
   const [products, featured] = await Promise.all([getProducts(), getFeaturedProducts(4)])
-
+  const bestSellers = await getBestSellers(90, 4);
   const categoryMap = new Map<string, { name: string; image: string | null; count: number }>()
   for (const p of products) {
     if (!p.category) continue
@@ -43,6 +44,25 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {bestSellers.length > 0 && (
+        <section className="mx-auto max-w-7xl px-6 py-16 sm:px-10">
+          <h2 className="font-[family-name:var(--font-fraunces)] text-2xl text-[var(--color-ink)]">
+            Meilleures ventes
+          </h2>
+          <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+            {bestSellers.map((product) => (
+              <ProductCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                price={product.price}
+                imageUrl={product.product_images?.[0]?.image_url ?? null}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       {categories.length > 0 && (
         <section className="mx-auto max-w-7xl px-6 py-16 sm:px-10">
