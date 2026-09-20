@@ -25,10 +25,10 @@ export default async function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 sm:px-10 lg:grid-cols-2 lg:items-center">
           <div>
             <h1 className="font-[family-name:var(--font-fraunces)] text-4xl leading-tight text-[var(--color-ink)] sm:text-5xl">
-              Des chaussures qui se remarquent, livrees a Bamako
+              Découvrez l'univers SMK, livré directement à Bamako
             </h1>
             <p className="mt-5 max-w-md text-[var(--color-ink)]/70">
-              Parcourez notre selection et commandez en un message, directement sur WhatsApp.
+              Parcourez notre sélection et commandez en un message, directement sur WhatsApp.
             </p>
             <Link
               href="/produits"

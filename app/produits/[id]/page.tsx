@@ -26,13 +26,8 @@ export async function generateMetadata({
   }
 }
 
-export default async function ProductPage({
-  params,
-}: {
-  params: Promise<{ id: string }>
-}) {
-  const { id } = await params
-  const product = await getProductById(id)
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const product = await getProductById(params.id)
 
   if (!product) notFound()
 
@@ -42,8 +37,31 @@ export default async function ProductPage({
   )
   const whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + message
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.imageUrl,
+    offers: {
+      '@type': 'Offer',
+      price: product.price ?? undefined,
+      priceCurrency: 'XOF',
+      availability: product.stock > 0
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+    },
+  }
+
+  
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {
+        <main className="mx-auto max-w-5xl px-6 py-16 sm:px-10">
       <div className="grid gap-12 sm:grid-cols-2">
         <ProductGallery images={product.images} productName={product.name} />
 
@@ -69,5 +87,8 @@ export default async function ProductPage({
         </div>
       </div>
     </main>
+      }
+    </>
+    
   )
 }
