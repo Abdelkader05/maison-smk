@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-12 sm:px-10">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-4">
           <div>
-            <h3 className="font-[family-name:var(--font-fraunces)] text-lg text-[var(--color-ink)]">SMK</h3>
+            <h3 className="font-[family-name:var(--font-fraunces)] text-lg text-[var(--color-ink)]">Maison SMK</h3>
             <p className="mt-2 text-sm text-[var(--color-ink)]/70">Boutique officielle à Bamako, commande directe via WhatsApp.</p>
           </div>
           <div>
