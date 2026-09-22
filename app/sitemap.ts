@@ -3,7 +3,7 @@ import { getProducts } from '@/lib/products'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const products = await getProducts()
-  const base = 'https://maisonsmk.ml'
+  const base = 'https://www.maisonsmk.ml'
 
   const productUrls = products.map((p) => ({
     url: `${base}/produits/${p.id}`,

@@ -16,13 +16,13 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://maisonsmk.ml'),
+  metadataBase: new URL('https://www.maisonsmk.ml'),
   title: "Maison SMK - Boutique officielle",
   description: "Découvrez l'univers de la marque Maison SMK à Bamako. Commandez directement via WhatsApp.",
   openGraph: {
     title: "Maison SMK - Boutique officielle",
     description: "Découvrez l'univers de la marque Maison SMK à Bamako. Commandez directement via WhatsApp.",
-    url: 'https://maisonsmk.ml',
+    url: 'https://www.maisonsmk.ml',
     locale: 'fr_ML',
     type: 'website',
   },
